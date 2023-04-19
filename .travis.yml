@@ -1,16 +1,10 @@
-cache: bundler
-
 jobs:
   include:
-    - stage: prepare cache
-      script: true
-      rvm: 2.3
-    - stage: test
-      script: bundle show
-      rvm: 2.3
-    - stage: test
-      script: bundle show
-      rvm: 2.3
-    - stage: test
-      script: bundle show
-      rvm: 2.3
+    - os: linux
+      language: python
+      python:
+       - "3.8"
+      arch: amd64
+      dist: focal
+      script:
+        - python hello_world.py
